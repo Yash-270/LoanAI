@@ -60,7 +60,7 @@ export default function Loan(){
 
             old.push(newEntry);
 
-            // 🔥 SAVE
+            
             localStorage.setItem(user.email || "data", JSON.stringify(old));
 
         }

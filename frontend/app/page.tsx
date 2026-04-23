@@ -67,8 +67,7 @@ export default function Home() {
 
   </div>
 </section>
-      {/* 🔥 FEATURES */}
-      <section className="py-20 bg-white">
+    <section className="py-20 bg-white">
 
   <div className="max-w-6xl mx-auto px-6">
 

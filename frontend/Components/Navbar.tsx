@@ -41,7 +41,7 @@ export default function Navbar() {
         </h1>
       </div>
 
-      {/* 🔹 Links */}
+      
       <div className="flex items-center gap-6">
         
         <Link 
