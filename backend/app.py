@@ -7,11 +7,12 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # sabko allow
+    allow_origins=["*"], 
     allow_methods=["*"],
     allow_headers=["*"],
 )
 model = pickle.load(open("model.pkl", "rb"))
+scaler = pickle.load(open("scaler.pkl", "rb"))
 
 @app.get("/")
 def home():
@@ -24,6 +25,7 @@ class LoanInput(BaseModel):
 @app.post("/predict")
 def predict(data: LoanInput):
     values = [data.income, data.loan_amount, data.credit_history]
-    result = model.predict([values])
+    scaled = scaler.transform([values])
+    result = model.predict(scaled)
     return {"prediction": int(result[0])}
 

@@ -75,4 +75,7 @@ print("Accuracy:", acc)
 with open("model.pkl", "wb") as f:
     pickle.dump(model, f)
 
+with open("scaler.pkl", "wb") as f:
+    pickle.dump(scaler, f)
+
 print("Model ready!")
