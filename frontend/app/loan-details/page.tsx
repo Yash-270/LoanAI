@@ -36,7 +36,7 @@ export default function Loan(){
                 return;
             }
             setLoading(true);
-            const res=await axios.post("http://localhost:8000/predict", {
+            const res=await axios.post("https://loanai-oytg.onrender.com/predict", {
                 income: Number(form.income),
                 loan_amount: Number(form.amount),
                 credit_history: Number(form.hist),
